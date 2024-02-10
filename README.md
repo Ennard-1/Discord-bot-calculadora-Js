@@ -17,7 +17,7 @@ Antes de executar este bot, você precisará ter o Node.js instalado em seu sist
 2. Navegue até o diretório do projeto:
 
 ```
-cd calculadora-discord-bot
+cd Discord-bot-calculadora-Js
 ```
 
 3. Instale as dependências necessárias usando npm:
