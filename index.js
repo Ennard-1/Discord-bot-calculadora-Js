@@ -1,6 +1,8 @@
+// Importações
 const math = require('mathjs');
 const { token } = require("./config.json")
 const { Client, IntentsBitField } = require('discord.js');
+
 const client = new Client({
   intents: [
     IntentsBitField.Flags.Guilds,
@@ -15,20 +17,9 @@ client.on('ready', (c) => {
 });
 
 client.on('messageCreate', (message) => {
-  if (message.author.bot) {
-    return;
-  }
-
-  if (message.content === 'hello') {
-    message.reply('hello');
-  }
-});
-
-client.on('messageCreate', (message) => {
-  if (message.author.bot) return; // Ignore messages from bots
+  if (message.author.bot) return; 
 
   const content = message.content.trim();
-  // Expressão regular para verificar se a mensagem contém uma equação válida
   const validEquationRegex = /^\s*(\d+(\.\d+)?(?:\%)?(?:\s*[\+\-\*\/]\s*\d+(\.\d+)?(?:\%)?)*\s*(?:[\+\-\*\/]\s*\(\s*\d+(\.\d+)?(?:\%)?\s*[\+\-\*\/]\s*\d+(\.\d+)?(?:\%)?\s*\)\s*)*\s*)$/;
 
   if (validEquationRegex.test(content)) {
